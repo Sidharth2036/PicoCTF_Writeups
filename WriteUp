@@ -1,0 +1,158 @@
+# picoCTF Write-ups
+
+This document contains write-ups for various picoCTF challenges, detailing the steps taken to find the flags.
+
+## Challenges
+
+### disk_disk_sleuth
+- **Task**: Unzip disk image file.
+- **Solution**: Use `strings` and `grep` to find the flag.
+
+### enhance
+- **Task**: Analyze a file.
+- **Solution**: Use `strings` to find the flag.
+
+### basic-file-exploit
+- **Task**: Exploit a C file.
+- **Solution**: The C file executes when a long int variable is entered in the database after providing base inputs (order number, echo words, and next command).
+
+### who is it
+- **Task**: Find details of a website.
+- **Solution**: Use the `whois` command with the domain.
+
+### two-sum
+- **Task**: Integer overflow challenge.
+- **Solution**: Enter the maximum integer value $$2^{31}$$ to get the flag.
+
+### some assembly required 1
+- **Task**: Inspect a website.
+- **Solution**: Look into JavaScript files for clues.
+
+### where are the robots
+- **Task**: Analyze `robots.txt`.
+- **Solution**: Understand which URLs crawlers can access to check internet traffic flow.
+
+### caas
+- **Task**: Utilize web vulnerability.
+- **Solution**: Use Linux shell commands after the URL; for example, attach `/cowsay/ ls` to list files and find the flag.
+
+### Milkslap
+- **Task**: Analyze image files.
+- **Solution**: Use the `zsteg` tool (only for PNG and BMP files).
+
+### la cifra de
+- **Task**: Decrypt a message.
+- **Solution**: Apply Vigenère cipher techniques.
+
+### power cookie
+- **Task**: Modify cookie values.
+- **Solution**: Set value from 0 to 1 to indicate admin rights for PHP page access.
+
+### matchtheregex
+- **Task**: Use regular expressions.
+- **Solution**: Search for patterns like `picoCTF{*}` to locate flags.
+
+### sleuthkit_intro
+- **Task**: Unzip a disk image.
+- **Solution**: Use `gunzip` and then `mmls` to display details of the disk image.
+
+### roboto sans
+- **Task**: Analyze a website's robots.txt and decrypt data.
+- **Solution**: Decrypt base64 encryption to access the flag URL.
+
+### secrets
+- **Task**: Locate hidden webpages.
+- **Status**: Not completed; involves checking JavaScript files.
+
+### picobrowser
+- **Task**: Change user agent header.
+- **Solution**: Use `curl -H "User-Agent: picobrowser"` to modify HTTP requests.
+
+### money-ware
+- **Task**: Ransomware challenge.
+- **Solution**: Analyze Petya ransomware behavior.
+
+### readmycert
+- **Task**: Decode CSR files.
+- **Solution**: Understand that .csr files are base64 encoded.
+
+### reverse
+- **Task**: Locate flags in files.
+- **Solution**: Use `strings` and `grep` commands effectively.
+
+### hideme
+- **Task**: Extract data from images.
+- **Solution**: Use `binwalk` to analyze image details and locate flags.
+
+### hidetosee
+- **Task**: Extract hidden data from images.
+- **Solution**: Use `steghide` and tools like CyberChef for decryption.
+
+### pcap_poisoning
+- **Task**: Analyze Wireshark captures.
+- **Solution**: Search TCP packets using filters like `tcp contains "pico"` to find flags.
+
+### timer
+- **Task**: Extract APK file data.
+- **Solution**: Use `binwalk`, then locate flags in AndroidManifest.xml file.
+
+### what lies within
+- **Task**: Extract secret data from images.
+- **Solution**: Use the `zsteg` command on .png and .bmp files.
+
+### corrupt
+- **Task**: Decode PNG files.
+- **Solution**: Utilize hexeditor and pngcheck packages for analysis.
+
+### like 1000
+```bash
+for i in {1..1000..-1}; do tar xvf $i.tar; done
+
+### sleuthkit apprentice 
+- usage of sleuthkit, mmls, fls and icat commands in the following order:
+mmls disk_image 
+fls disk_image -o start_address 
+icat disk_image -o start_address | grep flag 
+icat disk_image -o start_address address_of_flag 
+
+### fresh java
+- cat .class file, flag presented in line-by-line fashion
+
+### so meta
+- exiftool <file> | grep <pattern>
+
+### pitter patter and patters
+- using strings -e to encode the given data to 16 bit ones and reverse
+
+### bloatpy 
+- manipulate python code, remove exit status (it hinders the process) as the program discontinues once the password is incorrect
+
+### mus1c
+- cat file, use rockstar program as mentioned, convert given ascii values to text ==> flag
+
+### transposition trial 
+- use online transposition ciphers to find flag
+
+### substitution2
+- quipqiup online tool
+
+### packets primer
+- wireshark the file and locate file in one of the TCP protocols
+
+### rail fence 
+- use railfence cipher from online cipher tools
+
+### advanced-potion-making 
+- check for the header signature of files and try to use other tools like paint to find flag
+
+### tunnel vision 
+- open file, alter the given file (.bmp) to the standard format (change to static values), check for dimensions of the file, if not satisfied change its dimensions using python to convert decimal to hex and find the flag
+
+### safeopener2 
+- cat class file or use jd-gui to decompile class files
+
+### shark on wire1 
+- follow streams of protocols as mentioned
+
+### some assembly required 2 
+- search javascript files and use cyberchef cipher tools
