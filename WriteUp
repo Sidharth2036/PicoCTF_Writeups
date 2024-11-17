@@ -111,10 +111,10 @@ for i in {1..1000..-1}; do tar xvf $i.tar; done
 
 ### sleuthkit apprentice 
 - usage of sleuthkit, mmls, fls and icat commands in the following order:
-mmls disk_image 
-fls disk_image -o start_address 
-icat disk_image -o start_address | grep flag 
-icat disk_image -o start_address address_of_flag 
+- mmls disk_image 
+- fls disk_image -o start_address 
+- icat disk_image -o start_address | grep flag 
+- icat disk_image -o start_address address_of_flag 
 
 ### fresh java
 - cat .class file, flag presented in line-by-line fashion
