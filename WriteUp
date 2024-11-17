@@ -107,6 +107,7 @@ This document contains write-ups for various picoCTF challenges, detailing the s
 ### like 1000
 ```bash
 for i in {1..1000..-1}; do tar xvf $i.tar; done
+```
 
 ### sleuthkit apprentice 
 - usage of sleuthkit, mmls, fls and icat commands in the following order:
@@ -156,3 +157,39 @@ icat disk_image -o start_address address_of_flag
 
 ### some assembly required 2 
 - search javascript files and use cyberchef cipher tools
+
+### rps 
+- found flag, but in redacted form
+
+### find and open 
+- collect data from streams and use cyberchef to decode data, use it as a password for the other zip file to extract the flag
+
+### waves over lambda 
+- quipqiup
+
+### wpa-ing out
+- aircrack-ng
+
+### forbidden paths 
+- changing file directories by manipulating website directory paths
+
+### shark-on-wire-2 
+- find stream which has the same source ip address, convert the numbers from info tab into ASCII form and you'll get the flag
+
+### Irish-name-repo-2 
+- SQL injection (admin' OR '1'=='1)
+
+### flag_shop 
+- manipulation of c program to increase bank balance by typing in huge numbers
+
+### st3g0
+- zsteg
+
+### eavesdrop 
+- wireshark pcap file, look for salted message, convert the given ASCII to raw and save as 'file.des3', use the linux command in the given conversation, cat the file.txt
+
+### wireshark doo doo doo doo 
+- check for lined-based data in html file from protocol hierarchy, filter them and follow stream, use rot13 cipher to decode the flag
+
+### trivial flag transfer protocol 
+- extract tftp objects, decipher messages from it using rot 13, use the hidden key DUEDILIGENCE to extract flag using steghide tool
